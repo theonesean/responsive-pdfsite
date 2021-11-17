@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Redirecting...</title>
+</head>
+<body>
+<script type="text/javascript">
+    // set cookies for viewport width, height, and pixel ratio
+    // then redirect to /hello
+    document.cookie = "viewportWidth=" + window.innerWidth;
+    document.cookie = "viewportHeight=" + window.innerHeight;
+    document.cookie = "viewportPixelRatio=" + window.devicePixelRatio;
+    window.location.href = "/pdf/hello.pdf";
+</script>
+<p>Screem width is <span id="screenwidth"></span></p>
+<p>Screem height is <span id="screenheight"></span></p>
+<p><a href="/pdf/hello.pdf">go to pdf</a></p>
+<script type="text/javascript">
+    // set span to display cookies
+    var span = document.getElementById("screenwidth");
+    span.innerHTML = screen.width;
+    span = document.getElementById("screenheight");
+    span.innerHTML = screen.height;
+</script>
+</body>
+</html>
