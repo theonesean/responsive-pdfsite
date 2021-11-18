@@ -53,9 +53,7 @@ def hello_pdf(name):
     layout.add(p)
 
     # add a link to the layout
-    page.append_remote_go_to_annotation(
-        p.get_bounding_box(), uri="http://localhost:5000/"
-    )
+    page.append_remote_go_to_annotation(p.get_bounding_box(), uri="/")
 
     # binary_pdf = io.BytesIO()
     # PDF.dumps(binary_pdf, pdf)
