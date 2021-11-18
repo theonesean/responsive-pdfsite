@@ -6,6 +6,7 @@ from borb.pdf.document import Document
 from borb.pdf.page.page import Page
 from borb.pdf.pdf import PDF
 import io
+import os
 
 
 app = Flask(__name__)
@@ -47,8 +48,8 @@ def hello_pdf(name):
 
     # add a Paragraph object
     p = Paragraph(
-            f"Hello World! Your computer screen size is {viewport_width}x{viewport_height}. Click me! I'm a link!"
-        )
+        f"Hello World! Your computer screen size is {viewport_width}x{viewport_height}. Click me! I'm a link!"
+    )
     layout.add(p)
 
     # add a link to the layout
@@ -76,4 +77,4 @@ def hello_pdf(name):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(port=os.environ.get("PORT", 5000))
